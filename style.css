@@ -1,5 +1,5 @@
 html {
-  background: url(img/all/16467900415_bdb8ff842f_h.jpg) no-repeat center center fixed;
+  background: url(img/16467900415_d4b291535a_prog.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7,9 +7,19 @@ html {
 }
 
 body {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.4);
 }
 
 .photo_license {
   font-size: 80%;
+}
+
+.location-modal {
+  color: black;
+  text-align: left;
+  text-shadow: none;
+}
+
+.location-modal a {
+  color: black;
 }
