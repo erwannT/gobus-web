@@ -34,7 +34,7 @@
 
       <div class="site-wrapper-inner">
 
-        <div class="cover-container">
+        <div class="cover-container" ng-controller="findRouteController as route">
 
           <div class="masthead clearfix">
             <div class="inner">
@@ -48,8 +48,8 @@
             </div>
           </div>
 
-          <div class="inner cover" ng-controller="findRouteController as route">
 
+          <div class="inner cover" >
 
             <!-- Modal template definition -->
             <script type="text/ng-template" id="myModalContent.html">
@@ -64,45 +64,79 @@
               </div>
             </script>
 
-
-
             <h1 class="cover-heading">Itinéraire</h1>
             <p class="lead">Entrez un départ, une destination, et hop !</p>
             <p class="lead">
 
               <form ng-submit="route.submit()" class="form-horizontal" name="routeForm">
 
-                  <div class="form-group" ng-class="{ 'has-error': routeForm.inputDeparture.$invalid }" >
-                    <label class="sr-only" for="inputDeparture">Départ</label>
-                    <div class="col-xs-10 col-sm-offset-2 col-sm-7">
+                <div class="form-group" ng-class="{ 'has-error': routeForm.inputDeparture.$invalid }" >
+                  <label class="sr-only" for="inputDeparture">Départ</label>
+
+                  <div class="col-xs-10 col-sm-offset-2 col-sm-8">
+                    <div class="input-group">
                       <input ng-model="route.departure" ng-pattern="route.regex" type="text" class="form-control "
                         id="inputDeparture" name="inputDeparture" placeholder="Départ" required >
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-info" ng-click="route.open('departure')">
+                          <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                        </button>
+                      </span>
                     </div>
-                    <button type="button" class="btn btn-info col-xs-2 col-sm-1" ng-click="route.open('departure')">
-                      <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-                    </button>
                   </div>
+                </div>
 
-                  <div class="form-group" ng-class="{ 'has-error': routeForm.inputArrival.$invalid }">
-                    <label class="sr-only" for="inputArrival">Destination</label>
-                    <div class="col-xs-10 col-sm-offset-2 col-sm-7">
+                <div class="form-group" ng-class="{ 'has-error': routeForm.inputArrival.$invalid }">
+                  <label class="sr-only" for="inputArrival">Destination</label>
+
+                  <div class="col-xs-10 col-sm-offset-2 col-sm-8">
+                    <div class="input-group">
                       <input ng-model="route.arrival" ng-pattern="route.regex" type="text" class="form-control "
                         id="inputArrival" name="inputArrival" placeholder="Destination" required >
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-info" ng-click="route.open('arrival')">
+                          <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                        </button>
+                      </span>
                     </div>
-                    <button type="button" class="btn btn-info col-xs-2 col-sm-1" ng-click="route.open('arrival')">
-                      <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-                    </button>
                   </div>
+                </div>
 
                 <input class="btn btn-primary" type="submit" value="Hop">
 
               </form>
-
-
             </p>
+          </div>
 
+          <div class="results">
+
+            <div class="result-list">
+              <h2>Résultats</h2>
+              <ul>
+                <li ng-repeat="result in route.results" ng-click="route.selectedResult=result">
+                  <div>
+                    {{result.steps[0].departure.time}} - {{result.steps[result.steps.length-1].arrival.time}}
+                  </div>
+                  <div>
+                    <span ng-repeat="step in result.steps" class="step-line">{{step.line}}</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="result-detail">
+              <h2>Détails du trajet</h2>
+              <ul>
+                <li ng-repeat="step in route.selectedResult.steps">
+                  <div>Prendre le {{step.type}} {{step.line}} vers {{step.direction}}.</div>
+                  <div>Départ {{step.departure.time}} à l'arrêt {{step.departure.stopName}}</div>
+                  <div>Arrivée {{step.arrival.time}} à l'arrêt {{step.arrival.stopName}}</div>
+                </li>
+              </ul>
+            </div>
 
           </div>
+
 
           <div class="mastfoot">
             <div class="inner">

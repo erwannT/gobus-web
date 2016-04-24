@@ -23,3 +23,32 @@ body {
 .location-modal a {
   color: black;
 }
+
+
+.results {
+  background-color: white;
+  color: black;
+  text-align: left;
+  text-shadow: none;
+  padding: 4px 40px;
+  overflow: hidden;
+}
+
+.results h2 {
+}
+
+.result-list {
+min-height: 200px;
+float: left;
+width: 49%;
+}
+
+.result-detail {
+min-height: 200px;
+float: right;
+width: 49%;
+}
+
+.step-line {
+  margin: 0 6px;
+}

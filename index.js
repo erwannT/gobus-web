@@ -16,6 +16,99 @@ angular.module('gobusApp', ['ui.bootstrap', 'ui-leaflet'])
 */
   };
 
+
+  route.results = [
+  {
+    steps: [
+      {
+        line: 'C4',
+        type: 'bus',
+        direction: 'République',
+        departure: {
+          time: '21:25',
+          stopName: 'Za Saint-Sulpice',
+          position: ''
+        },
+        arrival:  {
+          time: '21:46',
+          stopName: 'République',
+          position: ''
+        }
+      },
+      {
+        line: 'a',
+        type: 'metro',
+        direction: 'Metro La Poterie',
+        departure: {
+          time: '21:52',
+          stopName: 'Metro République',
+          position: ''
+        },
+        arrival:  {
+          time: '21:46',
+          stopName: 'Metro Gares',
+          position: ''
+        }
+      }
+    ]
+  },
+  {
+    steps: [
+      {
+        line: '1',
+        type: 'bus',
+        direction: 'Rosa Parks',
+        departure: {
+          time: '11:10',
+          stopName: 'Longs Champs',
+          position: ''
+        },
+        arrival:  {
+          time: '11:36',
+          stopName: 'Gares',
+          position: ''
+        }
+      }
+    ]
+  },
+  {
+    steps: [
+      {
+        line: '50',
+        type: 'bus',
+        direction: 'République',
+        departure: {
+          time: '11:22',
+          stopName: 'ZA Saint-Sulpice',
+          position: ''
+        },
+        arrival:  {
+          time: '11:26',
+          stopName: 'Turmel',
+          position: ''
+        }
+      },
+      {
+        line: '1',
+        type: 'bus',
+        direction: 'Rosa Parks',
+        departure: {
+          time: '11:51',
+          stopName: 'Turmel',
+          position: ''
+        },
+        arrival:  {
+          time: '12:11',
+          stopName: 'Gares',
+          position: ''
+        }
+      }
+    ]
+  }
+];
+
+route.selectedResult = undefined;
+
   route.regex = /^(\-?\d+(\.\d+)?)\s*,\s*(\-?\d+(\.\d+)?)$/;
   route.departure = undefined;
   route.arrival = undefined;
