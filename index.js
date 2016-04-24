@@ -16,6 +16,12 @@ angular.module('gobusApp', ['ui.bootstrap', 'ui-leaflet'])
 */
   };
 
+  route.routeColors = {
+    C4: { type: "bus", color: "6F2282", textColor: "FFFFFF" },
+    a:  { type: "metro", color: "FFFFFF", textColor: "EE1D23" },
+    1:  { type: "bus", color: "95C11E", textColor: "1A171B" },
+    50: { type: "bus", color: "8CA5D6", textColor: "1A171B" }
+  };
 
   route.results = [
   {

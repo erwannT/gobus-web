@@ -112,23 +112,29 @@
 
             <div class="result-list">
               <h2>Résultats</h2>
-              <ul>
-                <li ng-repeat="result in route.results" ng-click="route.selectedResult=result">
+              <div class="list-group">
+                <a href="#" class="list-group-item" ng-repeat="result in route.results" ng-click="route.selectedResult=result" ng-class="{active: result==route.selectedResult}">
                   <div>
                     {{result.steps[0].departure.time}} - {{result.steps[result.steps.length-1].arrival.time}}
                   </div>
                   <div>
-                    <span ng-repeat="step in result.steps" class="step-line">{{step.line}}</span>
+                    <span ng-repeat="step in result.steps" class="step-line">
+                      <span class="line-number" ng-style="{ 'color': '#'+route.routeColors[step.line].textColor, 'background-color': '#'+route.routeColors[step.line].color }">{{step.line}}</span>
+                    </span>
                   </div>
-                </li>
-              </ul>
+                </a>
+              </div>
             </div>
 
             <div class="result-detail">
               <h2>Détails du trajet</h2>
               <ul>
                 <li ng-repeat="step in route.selectedResult.steps">
-                  <div>Prendre le {{step.type}} {{step.line}} vers {{step.direction}}.</div>
+                  <div>
+                    Prendre le {{route.routeColors[step.line].type}}
+                    <span class="line-number" ng-style="{ 'color': '#'+route.routeColors[step.line].textColor, 'background-color': '#'+route.routeColors[step.line].color }">{{step.line}}</span>
+                    vers {{step.direction}}.
+                  </div>
                   <div>Départ {{step.departure.time}} à l'arrêt {{step.departure.stopName}}</div>
                   <div>Arrivée {{step.arrival.time}} à l'arrêt {{step.arrival.stopName}}</div>
                 </li>
