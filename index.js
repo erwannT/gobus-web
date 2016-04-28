@@ -4,16 +4,24 @@ angular.module('gobusApp', ['ui.bootstrap', 'ui-leaflet'])
 
   var route = this;
   route.submit = function() {
-    console.log("depart: "+route.departure);
-    console.log("destination: "+route.destination);
-/*
+    var dep = route.departure.replace(/ /g, "");
+    var dest = route.departure.replace(/ /g, "");
+    console.log("depart: "+dep);
+    console.log("destination: "+dest);
+
     $http({
       method: 'GET',
-      url: 'http://192.168.1.25:8002'
-    }).then(function successCallback(response) {
-    }, function errorCallback(response) {
-    });
-*/
+      url: '/findroute?from='+dep+'&to='+dest+'&time=now'
+    }).then(
+      function successCallback(response) {
+        route.results = response.data;
+      },
+      function errorCallback(response) {
+        console.log("Request failed.");
+        //route.results = route.sampleResults;
+      }
+    );
+
   };
 
   route.routeColors = {
@@ -23,7 +31,7 @@ angular.module('gobusApp', ['ui.bootstrap', 'ui-leaflet'])
     50: { type: "bus", color: "8CA5D6", textColor: "1A171B" }
   };
 
-  route.results = [
+  route.sampleResults = [
     {
 
       Steps:
@@ -283,6 +291,7 @@ route.selectedResult = undefined;
     var res = undefined;
     if("selectionMarker" in $scope.markers)
       res = $scope.markers["selectionMarker"].lat + ", " + $scope.markers["selectionMarker"].lng;
+    console.log("Selected position: "+res);
     $uibModalInstance.close(res);
   };
 
