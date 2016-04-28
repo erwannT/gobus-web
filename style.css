@@ -38,9 +38,9 @@ body {
 }
 
 .result-list {
-min-height: 200px;
-float: left;
-width: 49%;
+  min-height: 200px;
+  float: left;
+  width: 49%;
 }
 
 .result-detail {
