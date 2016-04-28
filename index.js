@@ -24,94 +24,173 @@ angular.module('gobusApp', ['ui.bootstrap', 'ui-leaflet'])
   };
 
   route.results = [
-  {
-    steps: [
-      {
-        line: 'C4',
-        type: 'bus',
-        direction: 'République',
-        departure: {
-          time: '21:25',
-          stopName: 'Za Saint-Sulpice',
-          position: ''
-        },
-        arrival:  {
-          time: '21:46',
-          stopName: 'République',
-          position: ''
-        }
-      },
-      {
-        line: 'a',
-        type: 'metro',
-        direction: 'Metro La Poterie',
-        departure: {
-          time: '21:52',
-          stopName: 'Metro République',
-          position: ''
-        },
-        arrival:  {
-          time: '21:46',
-          stopName: 'Metro Gares',
-          position: ''
-        }
-      }
-    ]
+    {
+
+      Steps:
+      [
+          {
+              StartPoint:
+              {
+                  StopID: 1484,
+                  StopName: "ZA Saint-Sulpice",
+                  Xpos: "48.1318749048",
+                  Ypos: "-1.6358956396",
+                  Departuretime: "14:09:00",
+                  Arrivaltime: "14:09:00"
+              },
+              EndPoint:
+              {
+                  StopID: 1006,
+                  StopName: "Turmel",
+                  Xpos: "48.1222899582",
+                  Ypos: "-1.6507418227",
+                  Departuretime: "14:14:00",
+                  Arrivaltime: "14:14:00"
+              },
+              Tripid: "14121",
+              Headsign: "50 | Rennes République",
+              RouteId: 50,
+              Route: "50"
+          },
+          {
+              StartPoint:
+              {
+                  StopID: 1006,
+                  StopName: "Turmel",
+                  Xpos: "48.1222899582",
+                  Ypos: "-1.6507418227",
+                  Departuretime: "14:18:00",
+                  Arrivaltime: "14:18:00"
+              },
+              EndPoint:
+              {
+                  StopID: 1477,
+                  StopName: "Gares",
+                  Xpos: "48.1038386084",
+                  Ypos: "-1.6728603636",
+                  Departuretime: "14:41:00",
+                  Arrivaltime: "14:41:00"
+              },
+              Tripid: "20286",
+              Headsign: "1 | Chantepie Rosa Parks",
+              RouteId: 1,
+              Route: "1"
+          }
+      ]
+
   },
   {
-    steps: [
-      {
-        line: '1',
-        type: 'bus',
-        direction: 'Rosa Parks',
-        departure: {
-          time: '11:10',
-          stopName: 'Longs Champs',
-          position: ''
-        },
-        arrival:  {
-          time: '11:36',
-          stopName: 'Gares',
-          position: ''
-        }
-      }
-    ]
+
+      Steps:
+      [
+          {
+              StartPoint:
+              {
+                  StopID: 1484,
+                  StopName: "ZA Saint-Sulpice",
+                  Xpos: "48.1318749048",
+                  Ypos: "-1.6358956396",
+                  Departuretime: "14:09:00",
+                  Arrivaltime: "14:09:00"
+              },
+              EndPoint:
+              {
+                  StopID: 1006,
+                  StopName: "Turmel",
+                  Xpos: "48.1222899582",
+                  Ypos: "-1.6507418227",
+                  Departuretime: "14:14:00",
+                  Arrivaltime: "14:14:00"
+              },
+              Tripid: "14121",
+              Headsign: "50 | Rennes République",
+              RouteId: 50,
+              Route: "50"
+          },
+          {
+              StartPoint:
+              {
+                  StopID: 1006,
+                  StopName: "Turmel",
+                  Xpos: "48.1222899582",
+                  Ypos: "-1.6507418227",
+                  Departuretime: "14:26:00",
+                  Arrivaltime: "14:26:00"
+              },
+              EndPoint:
+              {
+                  StopID: 1477,
+                  StopName: "Gares",
+                  Xpos: "48.1038386084",
+                  Ypos: "-1.6728603636",
+                  Departuretime: "14:49:00",
+                  Arrivaltime: "14:49:00"
+              },
+              Tripid: "20291",
+              Headsign: "1 | Chantepie Rosa Parks",
+              RouteId: 1,
+              Route: "1"
+          }
+      ]
+
   },
   {
-    steps: [
-      {
-        line: '50',
-        type: 'bus',
-        direction: 'République',
-        departure: {
-          time: '11:22',
-          stopName: 'ZA Saint-Sulpice',
-          position: ''
-        },
-        arrival:  {
-          time: '11:26',
-          stopName: 'Turmel',
-          position: ''
-        }
-      },
-      {
-        line: '1',
-        type: 'bus',
-        direction: 'Rosa Parks',
-        departure: {
-          time: '11:51',
-          stopName: 'Turmel',
-          position: ''
-        },
-        arrival:  {
-          time: '12:11',
-          stopName: 'Gares',
-          position: ''
-        }
-      }
-    ]
+
+      Steps:
+      [
+          {
+              StartPoint:
+              {
+                  StopID: 1484,
+                  StopName: "ZA Saint-Sulpice",
+                  Xpos: "48.1318749048",
+                  Ypos: "-1.6358956396",
+                  Departuretime: "14:09:00",
+                  Arrivaltime: "14:09:00"
+              },
+              EndPoint:
+              {
+                  StopID: 1004,
+                  StopName: "Donzelot",
+                  Xpos: "48.1252440547",
+                  Ypos: "-1.6426764031",
+                  Departuretime: "14:12:00",
+                  Arrivaltime: "14:12:00"
+              },
+              Tripid: "14121",
+              Headsign: "50 | Rennes République",
+              RouteId: 50,
+              Route: "50"
+          },
+          {
+              StartPoint:
+              {
+                  StopID: 1004,
+                  StopName: "Donzelot",
+                  Xpos: "48.1252440547",
+                  Ypos: "-1.6426764031",
+                  Departuretime: "14:16:00",
+                  Arrivaltime: "14:16:00"
+              },
+              EndPoint:
+              {
+                  StopID: 1477,
+                  StopName: "Gares",
+                  Xpos: "48.1038386084",
+                  Ypos: "-1.6728603636",
+                  Departuretime: "14:41:00",
+                  Arrivaltime: "14:41:00"
+              },
+              Tripid: "20286",
+              Headsign: "1 | Chantepie Rosa Parks",
+              RouteId: 1,
+              Route: "1"
+          }
+      ]
+
   }
-];
+  ]
+;
 
 route.selectedResult = undefined;
 
